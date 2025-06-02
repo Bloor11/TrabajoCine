@@ -1,28 +1,18 @@
-import { Pelicula } from "./pelicula";
-import { Sala } from "./sala";
-import { Asiento } from "./asiento";
-import { Comestible } from "./comestible";
-
-export class Cliente {
-    public nombre: string;
-    public pelicula: Pelicula;
-    public sala: Sala;
-    public asiento: Asiento;
-    public comestibles: Comestible[];
-
-    constructor(nombre: string, pelicula: Pelicula, sala: Sala, asiento: Asiento) {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Cliente = void 0;
+class Cliente {
+    constructor(nombre, pelicula, sala, asiento) {
         this.nombre = nombre;
         this.pelicula = pelicula;
         this.sala = sala;
         this.asiento = asiento;
         this.comestibles = [];
     }
-
-    public agregarComestible(comestible: Comestible): void {
+    agregarComestible(comestible) {
         this.comestibles.push(comestible);
     }
-
-    public mostrarDetalle(): void {
+    mostrarDetalle() {
         console.log("** Detalle de la compra **");
         console.log("Cliente: " + this.nombre);
         console.log("Película: " + this.pelicula.titulo);
@@ -38,3 +28,4 @@ export class Cliente {
         }
     }
 }
+exports.Cliente = Cliente;
